@@ -1,0 +1,12 @@
+powershell
+[System.IO.Ports.SerialPort]::getportnames()
+// Creating an instance //
+// $port= new-Object System.IO.Ports.SerialPort COM#,Baudrate,None,8,one //
+$port= new-Object System.IO.Ports.SerialPort COM3,9600,None,8,one
+$port.open()
+$port.WriteLine("some String")
+$port.ReadLine()
+$port.close()
+// To write port read line to text file //
+$port.ReadLine() > C:/File_Directory/File.txt
+ 
